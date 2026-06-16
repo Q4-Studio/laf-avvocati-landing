@@ -5,346 +5,315 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="LAF Avvocati offre assistenza legale a Verona per privati, professionisti e imprese, con consulenza chiara e difesa rigorosa." name="description"/>
 <title>LAF Avvocati | Studio legale a Verona</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
 tailwind.config = {
-    darkMode: "class",
     theme: {
         extend: {
             colors: {
-                "navy-custom": "#2C3E50",
-                "navy-deep": "#1F2C3A",
-                "primary": "#E63946",
-                "ocher": "#D4AF37",
-                "light-grey": "#D3D8DB",
-                "text-light": "#C0C5C8",
-                "text-dark": "#1A252E"
+                "laf-blue": "#123A63",
+                "laf-blue-soft": "#EAF1F8",
+                "laf-gold": "#C6A247",
+                "laf-ink": "#172331",
+                "laf-muted": "#66758A",
+                "laf-line": "#D9E2EC",
+                "laf-cream": "#F8F6F0"
             },
             fontFamily: {
-                "display": ["Inter", "sans-serif"]
+                "display": ["Inter", "sans-serif"],
+                "serif": ["Playfair Display", "Georgia", "serif"]
             },
             boxShadow: {
-                "soft": "0 24px 70px rgba(8, 18, 30, 0.24)"
+                "card": "0 18px 45px rgba(18, 58, 99, 0.12)"
             }
         }
     }
 }
 </script>
 <style type="text/tailwindcss">
-:root {
-    --navy-custom: #2C3E50;
-    --primary: #E63946;
-    --ocher: #D4AF37;
-}
 html {
     scroll-behavior: smooth;
 }
 body {
-    background: var(--navy-custom);
+    background: #ffffff;
+    overflow-x: hidden;
 }
-.grain::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: .08;
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.32) 1px, transparent 0);
-    background-size: 18px 18px;
+.container-page {
+    @apply mx-auto max-w-[1180px];
+    width: calc(100% - 40px);
 }
-.accent-bar {
-    @apply mt-3 h-1 w-16 bg-ocher;
-}
-.accent-bar-primary {
-    @apply mt-3 h-1 w-20 bg-primary;
-}
-.section-heading {
-    @apply text-3xl font-bold tracking-tight text-white lg:text-4xl;
-}
-.btn-primary {
-    @apply inline-flex h-14 items-center justify-center rounded bg-primary px-10 text-base font-bold uppercase tracking-widest text-white shadow-lg transition-all hover:brightness-110 hover:shadow-primary/20;
-}
-.btn-ghost {
-    @apply inline-flex h-14 items-center justify-center rounded border border-white/20 bg-white/5 px-10 text-base font-bold uppercase tracking-widest text-white backdrop-blur-sm transition-all hover:bg-white/10;
-}
-.card-light {
-    @apply rounded-lg bg-light-grey text-text-dark shadow-xl;
+.container-wide {
+    @apply mx-auto max-w-[1720px];
+    width: calc(100% - 40px);
 }
 .nav-link {
-    @apply text-sm font-medium uppercase tracking-wide text-text-light transition-colors hover:text-ocher;
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-laf-ink/70 transition-colors hover:text-laf-blue;
+}
+.nav-hero-link {
+    @apply text-[15px] font-extrabold uppercase tracking-[0.13em] text-white/90 drop-shadow transition-colors hover:text-laf-gold;
+}
+.nav-hero-link-active {
+    @apply text-[15px] font-extrabold uppercase tracking-[0.13em] text-laf-gold drop-shadow;
+}
+.section-eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-laf-gold;
+}
+.section-title {
+    @apply mt-3 text-3xl font-extrabold tracking-tight text-laf-ink sm:text-4xl lg:text-5xl;
+}
+.gold-rule {
+    @apply mt-5 h-[3px] w-16 bg-laf-gold;
+}
+.btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center bg-laf-blue px-7 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-white transition hover:bg-laf-ink;
+}
+.btn-outline {
+    @apply inline-flex min-h-12 items-center justify-center border border-laf-blue/25 bg-white px-7 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-laf-blue transition hover:border-laf-blue hover:bg-laf-blue hover:text-white;
+}
+.soft-card {
+    @apply border border-laf-line bg-white shadow-card;
 }
 </style>
 </head>
-<body class="bg-navy-custom font-display text-text-light antialiased">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<body class="font-display text-laf-ink antialiased">
+<div class="min-h-screen overflow-x-hidden bg-white">
 
-<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-navy-custom/95 backdrop-blur-md">
-<div class="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 lg:px-10">
-<a class="flex items-center" href="#top" aria-label="LAF Avvocati - torna all'inizio">
-<img alt="Logo LAF Avvocati" class="h-16 w-auto max-w-[170px] object-contain" src="logo-laf.png"/>
+<header class="absolute left-0 top-0 z-50 w-full">
+<div class="container-wide relative flex h-28 items-center justify-between">
+<a class="flex items-center gap-3" href="#top" aria-label="LAF Avvocati - torna all'inizio">
+<img alt="Logo LAF Avvocati" class="h-12 w-auto max-w-[128px] object-contain brightness-0 invert sm:h-14 sm:max-w-[155px]" src="logo-laf.png"/>
 </a>
 <nav class="hidden items-center gap-10 md:flex" aria-label="Navigazione principale">
-<a class="nav-link" href="#studio">Lo Studio</a>
-<a class="nav-link" href="#team">Il Team</a>
-<a class="nav-link" href="#competenze">Competenze</a>
-<a class="nav-link" href="#contatti">Contatti</a>
+<a class="nav-hero-link-active" href="#top">Home</a>
+<a class="nav-hero-link" href="#studio">Studio</a>
+<a class="nav-hero-link" href="#team">Team</a>
+<a class="nav-hero-link" href="#servizi">Servizi</a>
+<a class="nav-hero-link" href="#contatti">Contatti</a>
 </nav>
-<div class="flex items-center gap-3">
-<a class="hidden h-11 items-center justify-center rounded bg-ocher px-6 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:brightness-110 md:inline-flex" href="#contatti">Prenota</a>
-<a class="inline-flex items-center justify-center rounded border border-white/20 px-3 py-2 text-white md:hidden" href="#contatti" aria-label="Contatti">
-<span class="material-symbols-outlined text-2xl">mail</span>
+<a class="absolute right-0 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center border border-white/30 text-white md:hidden" href="#contatti" aria-label="Vai ai contatti">
+<span class="material-symbols-outlined">call</span>
 </a>
-</div>
 </div>
 </header>
 
-<main id="top" class="flex-grow">
+<main id="top">
 
-<section class="grain relative flex min-h-[700px] flex-col items-center justify-center overflow-hidden py-24 text-center">
-<div class="absolute inset-0 z-0">
-<div class="h-full w-full bg-cover bg-center grayscale" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&amp;fit=crop&amp;w=2200&amp;q=85');"></div>
-<div class="absolute inset-0 bg-navy-custom/75"></div>
-</div>
-<div class="relative z-10 mx-auto w-full max-w-[1200px] px-6 lg:px-10">
-<div class="mx-auto max-w-4xl">
-<div class="mb-8 inline-flex items-center justify-center gap-3 rounded-full border border-ocher/50 bg-navy-custom/30 px-6 py-2 backdrop-blur-sm">
-<span class="text-xs font-bold uppercase tracking-[0.2em] text-ocher">Verona • Italia</span>
-</div>
-<h1 class="mb-4 text-xl font-bold uppercase tracking-[0.2em] text-white md:text-2xl">LAF Avvocati</h1>
-<h2 class="mb-8 text-5xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-Eccellenza Legale <br/>
-<span class="italic font-black text-primary">a Verona.</span>
-</h2>
-<p class="mx-auto mb-12 max-w-2xl text-lg font-light leading-relaxed text-text-light md:text-xl">
-Consulenza giuridica di alto profilo con dedizione e competenza, combinando tradizione e innovazione per la tutela dei vostri diritti.
-</p>
-<div class="flex flex-col justify-center gap-6 sm:flex-row">
-<a class="btn-primary" href="#studio">Scopri di più</a>
-<a class="btn-ghost" href="#competenze">I nostri servizi</a>
-</div>
+<section class="relative min-h-[760px] overflow-hidden bg-laf-ink text-white lg:min-h-screen">
+<div class="absolute inset-0 bg-cover bg-center lg:bg-[center_35%]" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&amp;fit=crop&amp;w=2400&amp;q=88'); filter: grayscale(8%) contrast(1.08) brightness(.55);"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/78 to-black/58"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_72%_50%,rgba(0,0,0,0.16),rgba(0,0,0,0.48)_58%,rgba(0,0,0,0.72)_100%)]"></div>
+<div class="container-wide relative flex min-h-[760px] items-center pt-24 lg:min-h-screen">
+<div class="max-w-[640px] lg:ml-[25vw]">
+<h1 class="text-3xl font-extrabold leading-tight tracking-tight text-laf-gold drop-shadow-[0_3px_18px_rgba(0,0,0,0.85)] sm:text-4xl lg:text-[2.75rem]">
+La difesa è diritto inviolabile<br/>in ogni stato e grado del procedimento.
+</h1>
+<p class="mt-6 text-lg font-extrabold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] sm:text-xl">Costituzione Art. 24</p>
+<a class="mt-16 inline-flex items-center gap-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] transition hover:text-laf-gold" href="#contatti">
+Richiedi una consulenza
+<span class="material-symbols-outlined text-base">arrow_circle_right</span>
+</a>
 </div>
 </div>
 </section>
 
-<section class="bg-navy-custom py-24 border-t border-white/5" id="studio">
-<div class="mx-auto max-w-[1200px] px-6 lg:px-10">
-<div class="mb-12 grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+<section class="bg-laf-cream py-20 lg:py-28" id="studio">
+<div class="container-page">
+<div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
 <div>
-<h2 class="section-heading">Lo Studio</h2>
-<div class="accent-bar"></div>
-<p class="mt-6 max-w-md text-text-light/80">Una presenza legale solida per decisioni importanti, costruita su ascolto, metodo e riservatezza.</p>
+<p class="section-eyebrow">Il nostro</p>
+<h2 class="section-title">Studio Legale</h2>
+<div class="gold-rule"></div>
 </div>
-<div class="grid gap-7 md:grid-cols-2">
-<p class="text-base leading-7 text-text-light/85">Lo Studio assiste il cliente nella prevenzione e nella gestione del conflitto, con particolare attenzione alla chiarezza delle opzioni disponibili. Ogni pratica viene impostata su ascolto, analisi dei documenti e definizione di una strategia proporzionata al risultato da ottenere.</p>
-<p class="text-base leading-7 text-text-light/85">L'attività combina consulenza, negoziazione e difesa in giudizio. L'obiettivo è offrire una guida autorevole ma comprensibile, capace di tutelare interessi personali e professionali senza perdere di vista tempi, sostenibilità e riservatezza.</p>
-</div>
-</div>
-<div class="grid gap-6 md:grid-cols-3">
-<div class="card-light p-8">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher"><span class="material-symbols-outlined">description</span></div>
-<h3 class="mt-5 text-xl font-bold">Analisi documentale</h3>
-<p class="mt-3 text-sm leading-6 text-text-dark/70">Valutazione ordinata di contratti, comunicazioni, atti e prove disponibili.</p>
-</div>
-<div class="card-light p-8">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher"><span class="material-symbols-outlined">handshake</span></div>
-<h3 class="mt-5 text-xl font-bold">Soluzioni negoziali</h3>
-<p class="mt-3 text-sm leading-6 text-text-dark/70">Ricerca di accordi efficaci quando consentono di ridurre tempi, costi e incertezza.</p>
-</div>
-<div class="card-light p-8">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher"><span class="material-symbols-outlined">gavel</span></div>
-<h3 class="mt-5 text-xl font-bold">Difesa giudiziale</h3>
-<p class="mt-3 text-sm leading-6 text-text-dark/70">Rappresentanza tecnica in giudizio con preparazione rigorosa e comunicazione costante.</p>
+<div class="grid gap-8 text-base leading-8 text-laf-muted md:grid-cols-2">
+<p>Lo Studio assiste il cliente nella prevenzione e nella gestione del conflitto, con attenzione alla chiarezza delle opzioni disponibili e alla definizione di una strategia proporzionata al risultato da ottenere.</p>
+<p>L'attività combina consulenza, negoziazione e difesa in giudizio. L'obiettivo è offrire una guida autorevole ma comprensibile, capace di tutelare interessi personali e professionali.</p>
 </div>
 </div>
-</div>
-</section>
-
-<section class="bg-navy-custom py-24 border-t border-white/5" id="team">
-<div class="mx-auto max-w-[1200px] px-6 lg:px-10">
-<div class="mb-16 flex flex-col items-center text-center">
-<h2 class="section-heading">Il Nostro Team</h2>
-<div class="accent-bar-primary"></div>
-<p class="mt-5 max-w-2xl text-text-light">Professionisti dedicati con anni di esperienza nelle più complesse sfide legali. I profili sono una base editoriale iniziale, sostituibili con biografie e fotografie ufficiali dello studio.</p>
-</div>
-<div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-<article class="group flex flex-col items-center rounded-xl bg-light-grey p-6 shadow-xl">
-<div class="mb-6 w-full overflow-hidden rounded-lg">
-<div class="aspect-[3/4] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('lorusso.jpg');"></div>
-</div>
-<h3 class="border-b border-primary pb-1 text-xl font-bold uppercase tracking-wide text-text-dark">Avv. Alberto Lorusso</h3>
-<p class="mt-2 font-bold text-primary">Fondatore</p>
-<p class="mt-3 text-center text-sm leading-relaxed text-text-dark/70">Segue contenzioso civile, consulenza per imprese e tutela dei patrimoni familiari, con particolare attenzione alla prevenzione del rischio legale.</p>
+<div class="mt-14 grid gap-6 md:grid-cols-3">
+<article class="soft-card p-8">
+<span class="material-symbols-outlined text-4xl text-laf-gold">description</span>
+<h3 class="mt-5 text-xl font-extrabold text-laf-blue">Analisi</h3>
+<p class="mt-3 text-sm leading-6 text-laf-muted">Valutazione ordinata di documenti, comunicazioni, atti e prove disponibili.</p>
 </article>
-<article class="group flex flex-col items-center rounded-xl bg-light-grey p-6 shadow-xl">
-<div class="mb-6 w-full overflow-hidden rounded-lg">
-<div class="aspect-[3/4] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=900&amp;q=85');"></div>
-</div>
-<h3 class="border-b border-primary pb-1 text-xl font-bold uppercase tracking-wide text-text-dark">Avv. Giulia Ferri</h3>
-<p class="mt-2 font-bold text-primary">Partner</p>
-<p class="mt-3 text-center text-sm leading-relaxed text-text-dark/70">Assiste privati e società in materia contrattuale, responsabilità civile e procedure stragiudiziali, privilegiando soluzioni chiare e sostenibili.</p>
+<article class="soft-card p-8">
+<span class="material-symbols-outlined text-4xl text-laf-gold">handshake</span>
+<h3 class="mt-5 text-xl font-extrabold text-laf-blue">Strategia</h3>
+<p class="mt-3 text-sm leading-6 text-laf-muted">Impostazione del percorso più adatto tra consulenza, accordo e tutela giudiziale.</p>
 </article>
-<article class="group flex flex-col items-center rounded-xl bg-light-grey p-6 shadow-xl">
-<div class="mb-6 w-full overflow-hidden rounded-lg">
-<div class="aspect-[3/4] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&amp;fit=crop&amp;w=900&amp;q=85');"></div>
-</div>
-<h3 class="border-b border-primary pb-1 text-xl font-bold uppercase tracking-wide text-text-dark">Avv. Matteo Rinaldi</h3>
-<p class="mt-2 font-bold text-primary">Of counsel</p>
-<p class="mt-3 text-center text-sm leading-relaxed text-text-dark/70">Si occupa di diritto penale, indagini difensive e assistenza nelle fasi più delicate del procedimento, con approccio prudente e tempestivo.</p>
+<article class="soft-card p-8">
+<span class="material-symbols-outlined text-4xl text-laf-gold">gavel</span>
+<h3 class="mt-5 text-xl font-extrabold text-laf-blue">Difesa</h3>
+<p class="mt-3 text-sm leading-6 text-laf-muted">Rappresentanza tecnica con preparazione rigorosa e comunicazione costante.</p>
 </article>
 </div>
 </div>
 </section>
 
-<section class="bg-navy-custom py-24 border-t border-white/5" id="competenze">
-<div class="mx-auto max-w-[1200px] px-6 lg:px-10">
-<div class="mb-16">
-<h2 class="section-heading">Aree di Competenza</h2>
-<div class="accent-bar"></div>
+<section class="bg-white py-20 lg:py-28" id="team">
+<div class="container-page">
+<div class="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+<div>
+<p class="section-eyebrow">Professionisti</p>
+<h2 class="section-title">Team</h2>
+<div class="gold-rule"></div>
 </div>
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">gavel</span>
+<p class="max-w-xl text-base leading-7 text-laf-muted">I profili sono una base provvisoria in attesa di fotografie e testi definitivi forniti dallo studio.</p>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Diritto Penale</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Assistenza in indagini, procedimenti penali e tutela della persona offesa, con cura della strategia difensiva fin dalle prime comunicazioni.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+<article class="soft-card group overflow-hidden">
+<div class="aspect-[3/4] bg-cover bg-center transition duration-500 group-hover:scale-[1.03]" style="background-image: url('lorusso.jpg');"></div>
+<div class="p-6">
+<p class="text-xs font-extrabold uppercase tracking-[0.18em] text-laf-gold">Avvocato</p>
+<h3 class="mt-2 text-xl font-extrabold text-laf-blue">Alberto Lorusso</h3>
+<p class="mt-4 text-sm leading-6 text-laf-muted">Profilo professionale da aggiornare con biografia ufficiale, aree di attività e informazioni ordinistiche.</p>
+</div>
 </article>
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">corporate_fare</span>
+<article class="soft-card overflow-hidden">
+<div class="flex aspect-[3/4] items-center justify-center bg-laf-blue-soft">
+<div class="text-center">
+<span class="material-symbols-outlined text-6xl text-laf-blue/35">person</span>
+<p class="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-laf-muted">Foto in arrivo</p>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Impresa e Società</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Consulenza su contratti, rapporti societari, responsabilità degli amministratori, recupero crediti e gestione delle controversie commerciali.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
+</div>
+<div class="p-6">
+<p class="text-xs font-extrabold uppercase tracking-[0.18em] text-laf-gold">Avvocato</p>
+<h3 class="mt-2 text-xl font-extrabold text-laf-blue">Professionista 2</h3>
+<p class="mt-4 text-sm leading-6 text-laf-muted">Spazio riservato al profilo di un socio o collaboratore indicato dallo studio.</p>
+</div>
 </article>
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">family_restroom</span>
+<article class="soft-card overflow-hidden">
+<div class="flex aspect-[3/4] items-center justify-center bg-laf-blue-soft">
+<div class="text-center">
+<span class="material-symbols-outlined text-6xl text-laf-blue/35">person</span>
+<p class="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-laf-muted">Foto in arrivo</p>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Famiglia e Successioni</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Supporto in separazioni, divorzi, affidamento, accordi patrimoniali, pianificazione successoria e gestione di conflitti ereditari.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
+</div>
+<div class="p-6">
+<p class="text-xs font-extrabold uppercase tracking-[0.18em] text-laf-gold">Avvocato</p>
+<h3 class="mt-2 text-xl font-extrabold text-laf-blue">Professionista 3</h3>
+<p class="mt-4 text-sm leading-6 text-laf-muted">Spazio riservato al profilo di un professionista dello studio.</p>
+</div>
 </article>
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">real_estate_agent</span>
+<article class="soft-card overflow-hidden">
+<div class="flex aspect-[3/4] items-center justify-center bg-laf-blue-soft">
+<div class="text-center">
+<span class="material-symbols-outlined text-6xl text-laf-blue/35">person</span>
+<p class="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-laf-muted">Foto in arrivo</p>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Immobiliare</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Assistenza per compravendite, locazioni, condominio, responsabilità contrattuale e contenziosi legati alla proprietà immobiliare.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
-</article>
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">work</span>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Lavoro</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Tutela di lavoratori e aziende in contratti, licenziamenti, contestazioni disciplinari, accordi transattivi e controversie giudiziali.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
-</article>
-<article class="group flex flex-col gap-4 rounded-lg border-2 border-transparent bg-light-grey p-8 shadow-sm transition-all hover:border-ocher hover:shadow-md">
-<div class="flex size-12 items-center justify-center rounded bg-ocher/10 text-ocher transition-colors group-hover:bg-ocher group-hover:text-white">
-<span class="material-symbols-outlined">account_balance</span>
+<div class="p-6">
+<p class="text-xs font-extrabold uppercase tracking-[0.18em] text-laf-gold">Collaboratore</p>
+<h3 class="mt-2 text-xl font-extrabold text-laf-blue">Professionista 4</h3>
+<p class="mt-4 text-sm leading-6 text-laf-muted">Scheda opzionale, da mantenere solo se lo studio conferma il quarto profilo.</p>
 </div>
-<h3 class="text-xl font-bold text-text-dark">Contenzioso Civile</h3>
-<p class="text-sm leading-relaxed text-text-dark/70">Gestione di cause civili, responsabilità, obbligazioni, risarcimenti e procedure di recupero del credito in fase stragiudiziale e giudiziale.</p>
-<a class="mt-auto flex items-center text-sm font-bold uppercase tracking-wide text-ocher hover:brightness-110" href="#contatti">Approfondisci <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span></a>
 </article>
 </div>
 </div>
 </section>
 
-<section class="bg-navy-custom/50 py-24 border-t border-white/5 text-text-light" id="contatti">
-<div class="mx-auto grid max-w-[1200px] gap-12 px-6 lg:grid-cols-2 lg:px-10">
+<section class="bg-laf-blue py-20 text-white lg:py-28" id="servizi">
+<div class="container-page">
+<div class="mb-14 grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
 <div>
-<div class="mb-8">
-<h2 class="section-heading">Contattaci</h2>
-<div class="accent-bar"></div>
+<p class="section-eyebrow">Servizi</p>
+<h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">Aree di competenza</h2>
+<div class="gold-rule"></div>
 </div>
-<p class="mb-10 text-text-light/80">Per prenotare una consulenza o richiedere informazioni, compili il modulo. In questa versione l'invio apre il client di posta del visitatore, senza richiedere server o strumenti esterni.</p>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-ocher/20 text-ocher"><span class="material-symbols-outlined">location_on</span></div>
+<p class="max-w-2xl text-base leading-8 text-white/72">Una struttura semplice, pensata come vetrina: poche macro-aree leggibili, da rifinire con i testi definitivi dello studio.</p>
+</div>
+<div class="grid gap-8 lg:grid-cols-3">
+<article class="border border-white/15 bg-white p-8 text-laf-ink shadow-card">
+<div class="mb-7 aspect-[16/10] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1593115057322-e94b77572f20?auto=format&amp;fit=crop&amp;w=1000&amp;q=80');"></div>
+<h3 class="text-2xl font-extrabold text-laf-blue">Diritto Penale</h3>
+<p class="mt-4 text-sm leading-7 text-laf-muted">Assistenza e rappresentanza nelle diverse fasi del procedimento penale, dalla prima consulenza alla difesa in giudizio.</p>
+<ul class="mt-6 space-y-2 text-sm text-laf-muted">
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Indagini e procedimenti penali</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Tutela della persona offesa</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Responsabilità e reati d'impresa</li>
+</ul>
+</article>
+<article class="border border-white/15 bg-white p-8 text-laf-ink shadow-card">
+<div class="mb-7 aspect-[16/10] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&amp;fit=crop&amp;w=1000&amp;q=80');"></div>
+<h3 class="text-2xl font-extrabold text-laf-blue">Diritto Civile</h3>
+<p class="mt-4 text-sm leading-7 text-laf-muted">Consulenza stragiudiziale e giudiziale per privati e imprese in controversie civili, contrattuali e patrimoniali.</p>
+<ul class="mt-6 space-y-2 text-sm text-laf-muted">
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Contratti e responsabilità</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Famiglia e successioni</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Immobiliare e recupero crediti</li>
+</ul>
+</article>
+<article class="border border-white/15 bg-white p-8 text-laf-ink shadow-card">
+<div class="mb-7 aspect-[16/10] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1000&amp;q=80');"></div>
+<h3 class="text-2xl font-extrabold text-laf-blue">Consulenza alle imprese</h3>
+<p class="mt-4 text-sm leading-7 text-laf-muted">Supporto continuativo nella gestione dei rapporti commerciali, societari e nella prevenzione del rischio legale.</p>
+<ul class="mt-6 space-y-2 text-sm text-laf-muted">
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Contrattualistica</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Contenzioso commerciale</li>
+<li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 bg-laf-gold"></span>Compliance e prevenzione</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<section class="bg-white py-20 lg:py-28" id="contatti">
+<div class="container-page">
+<div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
 <div>
-<h4 class="text-lg font-bold text-white">Sede di Verona</h4>
-<p class="text-text-light/80">Via Pallone, 12<br/>37121 Verona (VR), Italia</p>
+<p class="section-eyebrow">Recapiti</p>
+<h2 class="section-title">Contatti</h2>
+<div class="gold-rule"></div>
+<p class="mt-7 max-w-md text-base leading-8 text-laf-muted">Per fissare un appuntamento o richiedere informazioni, contattare direttamente lo studio ai recapiti indicati.</p>
 </div>
-</div>
-<div class="flex items-start gap-4">
-<div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-ocher/20 text-ocher"><span class="material-symbols-outlined">call</span></div>
+<div class="soft-card divide-y divide-laf-line">
+<div class="grid gap-4 p-7 sm:grid-cols-[48px_1fr] sm:p-8">
+<div class="flex size-12 items-center justify-center bg-laf-blue text-white"><span class="material-symbols-outlined">location_on</span></div>
 <div>
-<h4 class="text-lg font-bold text-white">Telefono</h4>
-<p class="text-text-light/80"><a class="hover:text-ocher" href="tel:+390451234567">+39 045 123 4567</a></p>
-<p class="text-sm text-text-light/50">Lun – Ven, 09:00 – 18:00</p>
+<h3 class="text-lg font-extrabold text-laf-blue">Sede</h3>
+<p class="mt-2 leading-7 text-laf-muted">Via Pallone, 12<br/>37121 Verona (VR)</p>
 </div>
 </div>
-<div class="flex items-start gap-4">
-<div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-ocher/20 text-ocher"><span class="material-symbols-outlined">mail</span></div>
+<div class="grid gap-4 p-7 sm:grid-cols-[48px_1fr] sm:p-8">
+<div class="flex size-12 items-center justify-center bg-laf-blue text-white"><span class="material-symbols-outlined">call</span></div>
 <div>
-<h4 class="text-lg font-bold text-white">Email</h4>
-<p class="text-text-light/80"><a class="hover:text-ocher" href="mailto:info@lfaavvocati.it">info@lfaavvocati.it</a></p>
+<h3 class="text-lg font-extrabold text-laf-blue">Telefono</h3>
+<p class="mt-2 leading-7 text-laf-muted"><a class="font-semibold text-laf-ink hover:text-laf-blue" href="tel:+390451234567">+39 045 123 4567</a></p>
+<p class="text-sm text-laf-muted">Lun - Ven, 09:00 - 18:00</p>
+</div>
+</div>
+<div class="grid gap-4 p-7 sm:grid-cols-[48px_1fr] sm:p-8">
+<div class="flex size-12 items-center justify-center bg-laf-blue text-white"><span class="material-symbols-outlined">mail</span></div>
+<div>
+<h3 class="text-lg font-extrabold text-laf-blue">Email</h3>
+<p class="mt-2 leading-7 text-laf-muted"><a class="font-semibold text-laf-ink hover:text-laf-blue" href="mailto:info@lfaavvocati.it">info@lfaavvocati.it</a></p>
 </div>
 </div>
 </div>
 </div>
-<form class="rounded-lg bg-light-grey p-8 text-text-dark shadow-xl" id="contact-form">
-<div class="flex flex-col gap-4">
-<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold uppercase text-text-dark" for="name">Nome</label>
-<input class="w-full rounded border border-gray-400 bg-white/50 px-4 py-3 text-sm focus:border-ocher focus:outline-none focus:ring-1 focus:ring-ocher" id="name" name="name" placeholder="Mario Rossi" type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold uppercase text-text-dark" for="phone">Telefono</label>
-<input class="w-full rounded border border-gray-400 bg-white/50 px-4 py-3 text-sm focus:border-ocher focus:outline-none focus:ring-1 focus:ring-ocher" id="phone" name="phone" placeholder="+39 ..." type="tel"/>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold uppercase text-text-dark" for="email">Email</label>
-<input class="w-full rounded border border-gray-400 bg-white/50 px-4 py-3 text-sm focus:border-ocher focus:outline-none focus:ring-1 focus:ring-ocher" id="email" name="email" placeholder="mario.rossi@email.com" type="email"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold uppercase text-text-dark" for="message">Messaggio</label>
-<textarea class="w-full rounded border border-gray-400 bg-white/50 px-4 py-3 text-sm focus:border-ocher focus:outline-none focus:ring-1 focus:ring-ocher" id="message" name="message" placeholder="Indichi sinteticamente la questione e l'eventuale urgenza." rows="4"></textarea>
-</div>
-<div class="flex items-start gap-2 py-2">
-<input class="mt-1 h-4 w-4 rounded border-gray-400 bg-white/50 text-ocher focus:ring-ocher" id="privacy" type="checkbox"/>
-<label class="text-xs text-text-dark/80" for="privacy">Acconsento al trattamento dei dati personali per essere ricontattato in merito alla richiesta inviata.</label>
-</div>
-<button class="mt-2 flex h-12 w-full items-center justify-center rounded bg-primary font-bold uppercase tracking-wider text-white shadow-md transition-all hover:brightness-110" type="submit">Invia Richiesta</button>
-<p class="text-xs leading-5 text-text-dark/60">Il messaggio verrà preparato nel programma email configurato sul dispositivo.</p>
-</div>
-</form>
 </div>
 </section>
 
 </main>
 
-<footer class="border-t border-white/5 bg-navy-custom py-10 text-center text-sm text-text-light/40">
-<div class="mx-auto max-w-[1200px] px-6">
-<div class="mb-6 flex justify-center gap-6">
-<a class="transition-colors hover:text-ocher" href="#">Privacy Policy</a>
-<a class="transition-colors hover:text-ocher" href="#">Cookie Policy</a>
-<a class="transition-colors hover:text-ocher" href="#">Note Legali</a>
+<footer class="bg-laf-ink py-10 text-white">
+<div class="container-page">
+<div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+<img alt="Logo LAF Avvocati" class="h-12 w-auto max-w-[128px] object-contain brightness-0 invert sm:h-14 sm:max-w-[155px]" src="logo-laf.png"/>
+<nav class="flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold uppercase tracking-[0.16em] text-white/60" aria-label="Link footer">
+<a class="hover:text-laf-gold" href="#studio">Studio</a>
+<a class="hover:text-laf-gold" href="#team">Team</a>
+<a class="hover:text-laf-gold" href="#servizi">Servizi</a>
+<a class="hover:text-laf-gold" href="#contatti">Contatti</a>
+</nav>
 </div>
-<p>© 2026 LAF Avvocati. Informazioni legali e dati fiscali da confermare prima della pubblicazione.</p>
+<div class="mt-8 border-t border-white/10 pt-6 text-sm leading-6 text-white/45">
+<p>© 2026 LAF Avvocati. Informazioni legali, dati fiscali, privacy policy e cookie policy da confermare prima della pubblicazione.</p>
+</div>
 </div>
 </footer>
 
 </div>
-<script>
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    var form = event.currentTarget;
-    var name = form.elements.name.value.trim();
-    var phone = form.elements.phone.value.trim();
-    var email = form.elements.email.value.trim();
-    var message = form.elements.message.value.trim();
-    var subject = encodeURIComponent('Richiesta di consulenza - LAF Avvocati');
-    var body = encodeURIComponent('Nome: ' + name + '\nTelefono: ' + phone + '\nEmail: ' + email + '\n\nMessaggio:\n' + message);
-    window.location.href = 'mailto:info@lfaavvocati.it?subject=' + subject + '&body=' + body;
-});
-</script>
 </body>
 </html>
